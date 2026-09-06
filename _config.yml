@@ -1,0 +1,8 @@
+title: Gustav Henning
+description: Personal blog
+url: "https://gustavhenning.github.io"
+theme: minima
+permalink: /:year/:month/:day/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
