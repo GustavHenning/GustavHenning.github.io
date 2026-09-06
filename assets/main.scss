@@ -26,5 +26,5 @@
 .backlinks { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd; font-size: .9rem; }
 .note-list li { margin-bottom: .6rem; }
 @media (max-width: 600px) { .infobox { float: none; width: auto; margin: 0 0 1rem; } }
-.avatar { float: right; border-radius: 50%; margin: 0 0 1rem 1.5rem; }
+.avatar { float: right; border-radius: 50%; margin: 0 0 1rem 1.5rem; shape-outside: circle(); }
 @media (max-width: 600px) { .avatar { float: none; display: block; margin: 0 auto 1rem; } }

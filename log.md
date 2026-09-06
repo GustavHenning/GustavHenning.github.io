@@ -4,8 +4,6 @@ title: Log
 permalink: /log/
 ---
 
-Notes ordered by when they were last revised. This is the closest thing the site has to a blog feed.
-
 {% assign recent = site.notes | sort: "revised" | reverse %}
 | Revised | Note | Topic | Status |
 |---|---|---|---|

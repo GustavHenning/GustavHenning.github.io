@@ -4,8 +4,6 @@ title: Topics
 permalink: /topics/
 ---
 
-Every note on this site, grouped by topic.
-
 {% for t in site.topics %}
 {%- assign key = t[0] -%}{%- assign meta = t[1] -%}
 {%- assign notes = site.notes | where: "topic", key | sort: "title" %}
