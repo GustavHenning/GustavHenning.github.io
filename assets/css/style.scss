@@ -1,0 +1,30 @@
+---
+---
+@import "minima";
+
+.infobox {
+  float: right; width: 15rem; margin: 0 0 1rem 1.5rem; padding: .6rem .8rem;
+  border: 1px solid #ddd; background: #f8f8f8; font-size: .85rem;
+  table { margin: 0; border: 0; }
+  th, td { border: 0; padding: .15rem .4rem; text-align: left; vertical-align: top; }
+  th { font-weight: 600; white-space: nowrap; }
+}
+.note-summary { font-style: italic; color: #555; }
+.toc {
+  display: inline-block; padding: .6rem 1rem; margin-bottom: 1rem;
+  border: 1px solid #ddd; background: #f8f8f8; font-size: .9rem;
+  ol { margin: .3rem 0 0 1.2rem; }
+  .toc-h3 { margin-left: 1rem; list-style: lower-alpha; }
+}
+.status {
+  display: inline-block; padding: 0 .4em; border-radius: 3px; font-size: .75em;
+  text-transform: uppercase; letter-spacing: .03em; vertical-align: middle;
+  &-seed { background: #fde8c8; color: #7a4a00; }
+  &-growing { background: #d9f0d3; color: #1f5e1f; }
+  &-evergreen { background: #d4e6f7; color: #124a7a; }
+}
+.backlinks { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd; font-size: .9rem; }
+.note-list li { margin-bottom: .6rem; }
+@media (max-width: 600px) { .infobox { float: none; width: auto; margin: 0 0 1rem; } }
+.avatar { float: right; border-radius: 50%; margin: 0 0 1rem 1.5rem; }
+@media (max-width: 600px) { .avatar { float: none; display: block; margin: 0 auto 1rem; } }

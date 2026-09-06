@@ -1,0 +1,18 @@
+{%- comment -%} Lists every note whose body links to this page. {%- endcomment -%}
+{%- assign needle = page.url -%}
+{%- assign found = "" | split: "" -%}
+{%- for n in site.notes -%}
+  {%- if n.url != page.url and n.content contains needle -%}
+    {%- assign found = found | push: n -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if found.size > 0 -%}
+<section class="backlinks">
+  <h2 id="backlinks">Pages that link here</h2>
+  <ul>
+  {%- for n in found -%}
+    <li><a href="{{ n.url | relative_url }}">{{ n.title }}</a></li>
+  {%- endfor -%}
+  </ul>
+</section>
+{%- endif -%}

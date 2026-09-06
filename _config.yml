@@ -1,8 +1,37 @@
 title: Gustav Henning
-description: Personal blog
+description: Notes on philosophy, and whatever else I end up thinking about
 url: "https://gustavhenning.github.io"
 theme: minima
-permalink: /:year/:month/:day/:title/
+github_username: GustavHenning
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+collections:
+  notes:
+    output: true
+    permalink: /:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: note
+      status: seed
+
+header_pages:
+  - topics.md
+  - log.md
+  - about.md
+
+# Topic registry. Each note's `topic:` must be one of these keys.
+topics:
+  philosophy:
+    title: Philosophy
+    description: Ethics, meaning, how to live, and what I think about how others have answered those questions.
+
+statuses:
+  seed: "Seed - a rough idea, barely written down"
+  growing: "Growing - being worked on, expect changes"
+  evergreen: "Evergreen - reasonably complete, revised occasionally"

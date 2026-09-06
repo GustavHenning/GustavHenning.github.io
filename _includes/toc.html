@@ -1,0 +1,19 @@
+{%- comment -%} Builds a table of contents from h2/h3 in include.html. Shown only when there are 3+ headings. {%- endcomment -%}
+{%- assign parts = include.html | split: "<h" -%}
+{%- assign count = 0 -%}
+{%- for p in parts offset: 1 -%}{%- assign lvl = p | slice: 0 -%}{%- if lvl == "2" or lvl == "3" -%}{%- assign count = count | plus: 1 -%}{%- endif -%}{%- endfor -%}
+{%- if count >= 3 -%}
+<nav class="toc">
+  <strong>Contents</strong>
+  <ol>
+  {%- for p in parts offset: 1 -%}
+    {%- assign lvl = p | slice: 0 -%}
+    {%- if lvl == "2" or lvl == "3" -%}
+      {%- assign id = p | split: 'id="' | last | split: '"' | first -%}
+      {%- assign text = p | split: ">" | slice: 1, 99 | join: ">" | split: "</h" | first | strip_html -%}
+      <li class="toc-h{{ lvl }}"><a href="#{{ id }}">{{ text }}</a></li>
+    {%- endif -%}
+  {%- endfor -%}
+  </ol>
+</nav>
+{%- endif -%}
