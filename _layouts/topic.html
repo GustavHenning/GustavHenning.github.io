@@ -11,7 +11,7 @@ layout: default
   {%- if notes.size > 0 -%}
   <ul class="note-list">
     {%- for n in notes -%}
-    <li><a href="{{ n.url | relative_url }}">{{ n.title }}</a> <span class="status">{{ n.status }}</span>
+    <li><a href="{{ n.url | relative_url }}">{{ n.title }}</a>
       {%- if n.summary -%}<br><small>{{ n.summary }}</small>{%- endif -%}</li>
     {%- endfor -%}
   </ul>

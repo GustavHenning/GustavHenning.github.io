@@ -8,7 +8,6 @@ layout: default
     {%- if page.summary -%}<p class="summary">{{ page.summary }}</p>{%- endif -%}
     <p class="meta">
       <a href="{{ '/topics/' | append: page.topic | append: '/' | relative_url }}">{{ topic.title }}</a>
-      <span class="status" title="{{ site.statuses[page.status] }}">{{ page.status }}</span>
       {%- if page.started %}<span>Started {{ page.started | date: "%Y-%m-%d" }}</span>{% endif -%}
       {%- if page.revised %}<span>Revised {{ page.revised | date: "%Y-%m-%d" }}</span>{% endif -%}
     </p>
