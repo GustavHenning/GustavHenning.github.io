@@ -12,6 +12,6 @@ permalink: /topics/
 {{ meta.description }}
 
 {% for n in notes -%}
-- [{{ n.title }}]({{ n.url | relative_url }}) <span class="status status-{{ n.status }}">{{ n.status }}</span>
+- [{{ n.title }}]({{ n.url | relative_url }}) <small class="status">{{ n.status }}</small>
 {% endfor %}
 {% endfor %}

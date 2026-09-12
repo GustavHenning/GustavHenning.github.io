@@ -4,24 +4,16 @@ layout: default
 {%- assign topic = site.topics[page.topic] -%}
 <article class="note">
   <header>
-    <h1 class="note-title">{{ page.title }}</h1>
-    {%- if page.summary -%}<p class="note-summary">{{ page.summary }}</p>{%- endif -%}
+    <h1>{{ page.title }}</h1>
+    {%- if page.summary -%}<p class="summary">{{ page.summary }}</p>{%- endif -%}
+    <p class="meta">
+      <a href="{{ '/topics/' | append: page.topic | append: '/' | relative_url }}">{{ topic.title }}</a>
+      <span class="status" title="{{ site.statuses[page.status] }}">{{ page.status }}</span>
+      {%- if page.started %}<span>Started {{ page.started | date: "%Y-%m-%d" }}</span>{% endif -%}
+      {%- if page.revised %}<span>Revised {{ page.revised | date: "%Y-%m-%d" }}</span>{% endif -%}
+    </p>
   </header>
-
-  <aside class="infobox">
-    <table>
-      <tr><th>Topic</th><td><a href="{{ '/topics/' | append: page.topic | append: '/' | relative_url }}">{{ topic.title }}</a></td></tr>
-      <tr><th>Status</th><td><span class="status status-{{ page.status }}" title="{{ site.statuses[page.status] }}">{{ page.status }}</span></td></tr>
-      {%- if page.started -%}<tr><th>Started</th><td>{{ page.started | date: "%Y-%m-%d" }}</td></tr>{%- endif -%}
-      {%- if page.revised -%}<tr><th>Revised</th><td>{{ page.revised | date: "%Y-%m-%d" }}</td></tr>{%- endif -%}
-    </table>
-  </aside>
-
   {%- include toc.html html=content -%}
-
-  <div class="note-body">
-    {{ content }}
-  </div>
-
+  {{ content }}
   {%- include backlinks.html -%}
 </article>
