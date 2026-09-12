@@ -30,6 +30,9 @@ topics:
   philosophy:
     title: Philosophy
     description: TODO
+  engineering:
+    title: Engineering
+    description: Notes on building software, and on how the building itself is changing
 
 statuses:
   seed: "Seed - a rough idea, barely written down"
