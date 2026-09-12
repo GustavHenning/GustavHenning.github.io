@@ -4,7 +4,10 @@
     {
       "name": "jekyll",
       "runtimeExecutable": "sh",
-      "runtimeArgs": ["-c", "docker run --rm -p 4000:4000 -v \"$PWD\":/site -v gh-io-gems:/usr/local/bundle -w /site ruby:3.3 sh -c 'bundle install --quiet && bundle exec jekyll serve --host 0.0.0.0 --force_polling'"],
+      "runtimeArgs": [
+        "-c",
+        "docker run --rm --name gh-io-jekyll --init -p 4000:4000 -v \"$PWD\":/site -v gh-io-gems:/usr/local/bundle -w /site ruby:3.3 sh -c 'bundle install --quiet && bundle exec jekyll serve --host 0.0.0.0 --force_polling'"
+      ],
       "port": 4000
     }
   ]
